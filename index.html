@@ -1,47 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>charity: water — Students for Clean Water</title>
+  <meta name="description" content="Join college students funding clean water projects. Give monthly or start a fundraiser to change lives today." />
+
+  <!--
+    Week 2 Project — Hero like the reference screenshot
+    • Sticky nav with brand, links, Sign In, and GIVE button
+    • Full‑bleed hero background image
+    • Left: headline + subcopy (white on dark overlay)
+    • Right: donation card with tabs and preset amounts
+    • Pure HTML + CSS (plus tiny JS to highlight selected amount)
+    • Uses charity: water palette + Avenir/Proxima Nova fallbacks
+
+    Replace placeholder images and copy with your own once deployed.
+  -->
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <!-- ===================== NAV ===================== -->
+  <header>
+    <!-- Header / Nav
+         Classes: .container, .nav, .brand, .navlinks, .navcta
+         Edit visual rules in `styles.css` (search for header / .nav / .brand)
+    -->
+    <div class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+  <img class="logo" src="img/water-can-transparent.png" alt="charity water logo" width="28" height="28" />
+  <div class="brand-word">charity: water</div>
+      </div>
+      <div class="navlinks" role="menubar">
+        <a href="#take-action" role="menuitem">TAKE ACTION</a>
+        <a href="#about" role="menuitem">ABOUT US</a>
+        <a href="#why-water" role="menuitem">WHY WATER?</a>
+      </div>
+      <div class="navcta">
+        <a class="sign" href="#signin">SIGN IN</a>
+        <a class="give" href="#donate">GIVE</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <!-- Hero
+         Classes: .hero, .hero-wrap, .hero-copy, .hero-title, .hero-sub
+         Background image is set in `styles.css` (the --hero image URL at top of the file).
+         To change the picture, replace the URL in `.hero { background-image: ... }`.
+    -->
+    <div class="container hero-wrap">
+      <!-- Left copy -->
+      <div class="hero-copy">
+        <p class="eyebrow">College students for clean water</p>
+        <h1>Students for Clean Water</h1>
+        <p class="sub">Small actions. Big impact. Join campuses nationwide bringing clean water to families around the world.</p>
+      </div>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
+      <!-- Right: student-focused CTA (replaces donation box in hero) -->
+      <div class="cta-panel">
+        <!-- Panel (right column)
+             Classes: .cta-panel, .panel, .btn-row, .btn, .btn-ghost
+             Panel styles (glass blur) live in `styles.css` under "Panel (right side of hero)".
+        -->
+        <div class="panel" aria-label="Get involved">
+          <h2>Join the Student Water Challenge</h2>
+          <p>Start something small with friends — host an event, launch a quick fundraiser, or spread the word on campus.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary btn-inverse-text btn-upper" href="#fundraise">Start a Fundraiser</a>
+            <a class="btn-ghost btn-upper" href="#toolkit">Get Campus Toolkit</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+  <!-- ===================== STUDENT ACTIONS ===================== -->
+  <section class="students">
+    <div class="container">
+      <h2 id="take-action">How students are leading the way</h2>
+      <p class="donate-lead">From dorm-floor challenges to club events, campuses are funding clean and safe water projects around the world.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem"><b><span class="emoji">🎉</span>Host an event</b><p>Movie night, bake sale, campus run — pick something fun and invite friends.</p></article>
+        <article class="card" role="listitem"><b><span class="emoji">🌍</span>Start a fundraiser</b><p>Set a goal with your club or class. We’ll provide assets and tips to share.</p></article>
+        <article class="card" role="listitem"><b><span class="emoji">📣</span>Spread awareness</b><p>Share stories, table on the quad, or present in class with our campus toolkit.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DONATE (moved lower, friendlier) ===================== -->
+  <section id="donate" class="donate-section">
+    <!-- Donate section
+         Classes: .donate-section, .donate-card, .tabs, .amounts, .amount, .cta
+         Edit amounts in the HTML (buttons inside .amounts) and styles in `styles.css`.
+    -->
+    <div class="container wrap">
+      <div>
+        <h2>Want to give today?</h2>
+        <p class="donate-lead">Even $5 helps. Give once or monthly — whatever fits a student budget.</p>
+      </div>
+      <aside class="donate-card" aria-label="Donation">
+        <div class="tabs">
+          <div class="tab is-active" id="tab-once" role="button" aria-pressed="true">GIVE ONCE</div>
+          <div class="tab" id="tab-monthly" role="button" aria-pressed="false">MONTHLY</div>
+        </div>
+        <p style="margin:14px 6px 6px;font-weight:800;color:#2a2f36">Choose an amount</p>
+        <div class="amounts" id="amounts">
+          <button class="amount is-active" data-val="5">$5</button>
+          <button class="amount" data-val="10">$10</button>
+          <button class="amount" data-val="20">$20</button>
+          <button class="amount" data-val="40">$40</button>
+        </div>
+        <a href="#join" class="cta">Donate</a>
+        <p class="fine">Your $<span id="fine-amt">5</span> gift helps bring clean water to someone in need. 100% funds water projects.</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <!-- Footer
+         Classes: footer, .container
+         Small tweaks and colors are in `styles.css` under "Footer small tweaks".
+    -->
+    <div class="container">
+      © <span id="year"></span> charity: water (student project). This page is a class assignment and not an official charity: water property.
+    </div>
+  </footer>
+
+  <script>
+    // Small UI touches for the demo (no frameworks)
+    const amounts = document.querySelectorAll('.donate-section .amount');
+    const fineAmt = document.getElementById('fine-amt');
+
+    amounts.forEach(btn => {
+      btn.addEventListener('click', () => {
+        amounts.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const v = btn.dataset.val;
+        if (!isNaN(parseInt(v))) fineAmt.textContent = v;
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
+
